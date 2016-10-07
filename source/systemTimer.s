@@ -11,7 +11,7 @@ GetTimeStamp:                   //返回时间戳
     pop     {pc}                //函数返回
 
 
-.globl SystemWait
+.globl SystemWait               //r0中存放需要延迟的时间,μs
     delay   .req r2
     mov     delay,r0            //先保存一下r0
     push    {lr}
@@ -29,7 +29,7 @@ loop$:
 
     .unreq  delay
     .unreq  start
-    pop     {start}             //收工返回
+    pop     {pc}                //收工返回
 
 
 
